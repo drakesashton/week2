@@ -68,7 +68,8 @@
     const firstP = document.querySelector('#first p')
     const clickMe = document.querySelector('#clickMe')
     const drinkMe = document.querySelector('#drinkMe')
-
+    const secondP = document.querySelector('#second p')
+    const third = document.querySelector('#third')
     firstP.innerHTML = "How are you?"
 
     clickMe.addEventListener('click', clickMeFunction)
@@ -80,8 +81,22 @@
     drinkMe.addEventListener('click', drinkMeFunction)
     function drinkMeFunction(e){
       console.log('Hey, I might be drunk')
-    }
+      secondP.innerHTML += ' drunk'
 
+      // second.className = 'red'
+      if (second.classList.contains('green')==true){
+        second.classList.remove('green')
+        second.classList.add('red')
+      } else {
+        second.classList.add('green')
+        second.classList.remove('red')
+      }
+    }
+    third.addEventListener('click', thirdClickFunction)
+    function thirdClickFunction(e){
+      console.log('3')
+      third.style.backgroundColor = 'rgb(84, 23, 199)'
+    }
   </script>
 </body>
 

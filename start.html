@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>beginnings</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout/ -->
+  <style media="screen">
+    body,
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    main {
+      width: 80%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    p{
+      padding: 1em;
+    }
+    button {
+      background-color: rgb(224, 114, 237);
+      padding: 1em;
+      border-radius: 30px;
+    }
+    #first {
+      background-color: rgb(235, 133, 70);
+    }
+
+    #second {
+      /* background-color: rgb(112, 223, 133); */
+    }
+
+    #third {
+      background-color: rgb(167, 70, 235);
+    }
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: rgb(112, 223, 133);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section id="first">
+      <p>hi</p>
+      <button type="button" id="clickMe" name="button">Click Me</button>
+    </section>
+    <section id="second" class="green">
+      <p>I am</p>
+      <button type="button" id="drinkMe" name="button">Drink Me</button>
+    </section>
+    <section id="third">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+  </main>
+  <script type="text/javascript">
+
+    const first = document.querySelector('#first')
+    const firstP = document.querySelector('#first p')
+    const clickMe = document.querySelector('#clickMe')
+    const drinkMe = document.querySelector('#drinkMe')
+
+    firstP.innerHTML = "How are you?"
+
+    clickMe.addEventListener('click', clickMeFunction)
+
+    function clickMeFunction(e) {
+      console.log('Hey, I was clicked')
+      firstP.innerHTML = "OUCH!"
+    }
+    drinkMe.addEventListener('click', drinkMeFunction)
+    function drinkMeFunction(e){
+      console.log('Hey, I might be drunk')
+    }
+
+  </script>
+</body>
+
+</html>
